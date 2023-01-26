@@ -1,0 +1,89 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.section-footer {
+  background: #242742;
+  border-top: 1px solid $border-1;
+  margin-top: 148px;
+
+  .section-footer-centered {
+    display: flex;
+    gap: 130px;
+    padding: 33px 0;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: left;
+
+    .wrapper-adress {
+      display: flex;
+      flex-direction: column;
+      width: 258px;
+
+      .box-logo {
+        width: 205px;
+        height: 39px;
+        margin-bottom: 33px;
+
+        .logo {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: url("../public/logo webtronics 1.png") 100% 100% / contain
+            no-repeat;
+        }
+      }
+      .adress {
+        .p1 {
+        }
+      }
+    }
+
+    .wrapper-navigation-col-1 {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      text-align: left;
+
+      .title {
+        margin-bottom: 8px;
+      }
+      .box-link {
+        a {
+          padding: 5px;
+        }
+      }
+    }
+
+    .wrapper-navigation-col-2 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex-basis: 105px;
+      flex-shrink: 0;
+      gap: 16px;
+      padding-top: 8px;
+      text-align: left;
+
+      .box-link {
+        a {
+          padding: 5px;
+        }
+      }
+    }
+
+    .wrapper-social-media {
+      .title {
+        margin-bottom: 24px;
+        text-align: left;
+      }
+
+      .wrapper-icons {
+        display: flex;
+        gap: 25px;
+
+        .icon {
+        }
+      }
+    }
+  }
+}

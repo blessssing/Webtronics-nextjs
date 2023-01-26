@@ -1,0 +1,119 @@
+//# === variables ===
+$color-bg-gradient-btn: linear-gradient(
+  180deg,
+  #1ff2ff 0%,
+  #27f9e5 52.66%,
+  #2fffcd 100%
+);
+$gradient-1: #15bffd;
+$gradient-2: #9c37fd;
+$border-1: #2381ec;
+$color-white: #ffffff;
+$color-primary-80: #3b48d0;
+$color-primary-100: #0a1482;
+$color-error: #fd4646;
+$color-disabled: #636363;
+$color-placeholder: #658ebe;
+$color-selection: rgba(72, 255, 0, 0.6);
+$color-input-text: #a2cbfb;
+$color-clean: rgba(255, 255, 255, 0.05);
+$color-bg: #0c102d;
+$color-shadow-1: #191b41;
+$color-shadow-star: #2617fd;
+
+$color-bg-light: #fafafa;
+$color-silver: #f7f8fa;
+$color-black: #202020;
+$color-dark: #323232;
+$color-darkgrey: #3d3d3d;
+$color-lightgrey: #e5e5e5;
+$color-grey1: #727272;
+$color-grey2: #474747;
+$color-darkturquoise: #097e89;
+$color-bg-nav: #ff8322;
+$color-bg-test: #d3e972;
+$color-blue: #008ed6;
+$color-bg-body: #0c102d;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+$screen-xs-max: 575px;
+$screen-sm-max: 767px;
+$screen-md-max: 991px;
+$screen-lg-max: 1199px;
+
+$transition: all 0.5s ease-in-out;
+
+$outline-focus: 2px solid #ffec3a;
+
+$f-size-paragraph-1: 16px;
+$f-size-paragraph-2: 14px;
+
+$line-height-p1: 22.4px;
+$line-height-p2: 19.6px;
+//# / === variables ===
+
+//# === templates ===
+
+%tpl-transition {
+  transition: $transition;
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+}
+%tpl-transition-opacity {
+  transition: opacity 0.5s ease-in-out;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  -ms-transition: opacity 0.5s ease-in-out;
+  -o-transition: opacity 0.5s ease-in-out;
+}
+%tpl-border-radius {
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+%tpl-circle {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+%tpl-paragraph-1 {
+  font-size: 16px;
+  line-height: 22.4px;
+}
+%tpl-paragraph-2 {
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+%tpl-sprite {
+  display: block;
+  position: absolute;
+  content: "";
+  //top: ?;
+  //left: ?;
+  //right: ?;
+  //bottom: ?;
+  width: 356px;
+  height: 356px;
+  background: url("../public/sprite.png");
+  filter: blur(65px);
+  -webkit-filter: blur(65px);
+  @extend %tpl-circle;
+}
+
+//# / === templates ===

@@ -1,0 +1,134 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.section-gallery {
+  margin-top: 180px;
+
+  h2 {
+    margin-bottom: 48px;
+  }
+  .container {
+    position: relative;
+    display: flex;
+    gap: 15px;
+
+    .star-21 {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 30px;
+      bottom: -18%;
+      left: 17%;
+      background: url("../public/Star 21.png") center no-repeat;
+      z-index: 3000;
+
+      &:hover {
+        @include scale(1.25);
+      }
+    }
+    .star-20 {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 30px;
+      bottom: -6%;
+      right: 43%;
+      background: url("../public/Star 20.png") center no-repeat;
+      z-index: 3000;
+
+      &:hover {
+        @include scale(1.25);
+      }
+    }
+    .star-18 {
+      position: absolute;
+      content: "";
+      width: 30px;
+      height: 30px;
+      top: 70%;
+      right: 22%;
+      background: url("../public/Star 18.png") center no-repeat;
+      z-index: 3000;
+
+      &:hover {
+        @include scale(1.25);
+      }
+    }
+
+    .first-col {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      width: 266px;
+      z-index: 2000;
+
+      .p1 {
+        margin-top: 30px;
+        margin-bottom: 58px;
+      }
+
+      .block-image {
+        width: 266px;
+        height: 380px;
+        z-index: 4000;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &::before {
+        @extend %tpl-sprite;
+        bottom: -50px;
+        left: -124px;
+        z-index: 1000;
+      }
+    }
+
+    .wrapper-images {
+      display: grid;
+      grid-template-columns: 68% 31%;
+      grid-template-rows: 31.5% 31.5% 1fr;
+      gap: 1% 1%;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "big-photo small-photo-1"
+        "big-photo small-photo-2"
+        "description description";
+    }
+
+    .big-photo {
+      grid-area: big-photo;
+    }
+
+    .small-photo-1 {
+      grid-area: small-photo-1;
+    }
+
+    .small-photo-2 {
+      grid-area: small-photo-2;
+    }
+
+    .description {
+      grid-area: description;
+      align-self: end;
+      width: 90%;
+
+      .p1 {
+      }
+    }
+  }
+
+  .p1 {
+    text-align: left;
+    @extend %tpl-paragraph-1;
+  }
+
+  img {
+    @include borderRadius(16px);
+    width: 100%;
+    height: 100%;
+  }
+}

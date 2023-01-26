@@ -1,0 +1,126 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.section-questions {
+  margin-top: 180px;
+
+  h2 {
+    width: 641px;
+    margin: 0 auto 56px;
+  }
+
+  .container-questions {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    text-align: left;
+
+    .wrapper-questions {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 420px;
+      @include borderRadius(35px);
+      background-color: #16183d;
+      box-shadow: 0 0 127px 51px $color-shadow-1;
+
+      .star-22 {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 30px;
+        bottom: 12%;
+        left: 10%;
+        background: url("../public/Star 22.png") center no-repeat;
+        z-index: 3000;
+
+        &:hover {
+          @include scale(1.25);
+        }
+      }
+
+      .p1 {
+      }
+
+      .block-image {
+        width: 90%;
+        height: 406px;
+        margin: 0 auto;
+        @include borderRadius(35px);
+        background-image: url("../public/question.png");
+        background-size: contain;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 87px 21px $color-shadow-1;
+      }
+    }
+
+    .wrapper-price {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      flex-basis: 680px;
+      gap: 24px;
+
+      .card-price {
+        position: relative;
+        padding: 16px 24px;
+        border: 1px solid;
+        border-image: url("../public/border-small-what-is-the-price.png") 34/3189
+          610px;
+        @extend %tpl-transition;
+
+        h4 {
+        }
+        .p1 {
+          margin-top: 16px;
+        }
+
+        .icon-toggle {
+          position: absolute;
+          content: "";
+          display: block;
+          top: 12px;
+          right: 20px;
+          width: 22px;
+          height: 22px;
+          cursor: pointer;
+          z-index: 5000;
+        }
+      }
+
+      .star-8 {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 30px;
+        bottom: 2%;
+        left: 48%;
+        background: url("../public/Star 8.png") center no-repeat;
+        z-index: 3000;
+
+        &:hover {
+          @include scale(1.25);
+        }
+      }
+    }
+
+    &::before {
+      @extend %tpl-sprite;
+      bottom: -50%;
+      left: -10%;
+    }
+
+    &::after {
+      @extend %tpl-sprite;
+      top: -144px;
+      right: -150px;
+    }
+  }
+
+  .p1 {
+    @extend %tpl-paragraph-1;
+  }
+}

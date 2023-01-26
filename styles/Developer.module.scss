@@ -1,0 +1,64 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.main-container {
+  margin-bottom: 189px;
+
+  .wrapper-main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 125px;
+
+    .front-end {
+      h1 {
+      }
+    }
+
+    .wrapper-p {
+      margin-left: 57px;
+      .p {
+        width: 340px;
+        height: 66px;
+        text-align: left;
+        @extend %tpl-paragraph-1;
+      }
+    }
+
+    .wrapper-button {
+      position: relative;
+
+      &::before {
+        @extend %tpl-sprite;
+        top: 40px;
+        left: -50px;
+      }
+    }
+
+    .wrapper-developer {
+      margin-left: 24px;
+    }
+  }
+
+  .wrapper-courses {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+
+    h3 {
+      position: relative;
+      z-index: 2000;
+      margin-right: 30px;
+    }
+
+    &::before {
+      @extend %tpl-sprite;
+      top: -150px;
+      right: -135px;
+      z-index: 1000;
+    }
+  }
+}

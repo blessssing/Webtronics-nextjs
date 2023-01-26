@@ -1,0 +1,92 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.section-programming-technologies {
+  position: relative;
+  margin-top: 179px;
+  text-align: center;
+
+  .star-11 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: -70px;
+    right: 100px;
+    background: url("../public/Star 11.png") center no-repeat;
+    z-index: 3000;
+
+    &:hover {
+      @include scale(1.7);
+    }
+  }
+
+  .star-18 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 2px;
+    right: -55px;
+    background: url("../public/Star 18.png") center no-repeat;
+    z-index: 3000;
+
+    &:hover {
+      @include scale(1.18);
+    }
+  }
+
+  .title {
+  }
+
+  .description {
+    width: 432px;
+    margin-top: 16px;
+    margin: 16px auto 54px;
+    @extend %tpl-paragraph-1;
+  }
+
+  .wrapper-logos {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+
+    .card-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 181px;
+      height: 230px;
+      padding-top: 24px;
+      backdrop-filter: blur(5px);
+      border-radius: 16px;
+      border: 1px solid;
+      border-image: url("../public/border-gradient.png") 40% 50% / 40% 51%;
+
+      .block-image {
+        width: 162px;
+        height: 136px;
+
+        img {
+          width: 97%;
+          height: 97%;
+        }
+      }
+      .title {
+        margin: 16px 0 25px;
+      }
+    }
+  }
+
+  &::before {
+    @extend %tpl-sprite;
+    bottom: -138px;
+    left: -108px;
+  }
+
+  &::after {
+    @extend %tpl-sprite;
+    top: -218px;
+    right: -108px;
+  }
+}

@@ -1,0 +1,199 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.section-about {
+  position: relative;
+
+  .star-1 {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 50px;
+    left: 120px;
+    background: url("../public/Star 12.png") center no-repeat;
+
+    &:hover {
+      @include scale(1.5);
+    }
+  }
+  .star-2 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: -40px;
+    left: 50%;
+    background: url("../public/Star 9.png") center no-repeat;
+
+    &:hover {
+      @include scale(1.6);
+    }
+  }
+  .star-3 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 0;
+    right: 230px;
+    background: url("../public/Star 9.png") center no-repeat;
+
+    &:hover {
+      @include scale(1.6);
+    }
+  }
+  .star-4 {
+    position: absolute;
+    content: "";
+    width: 40px;
+    height: 40px;
+    top: -33px;
+    right: -100px;
+    @include borderRadius(30%);
+    box-shadow: 0px 0px 153.579px $color-shadow-star,
+      0px 0px 87.7592px $color-shadow-star, 0px 0px 51.1929px $color-shadow-star,
+      0px 0px 25.5964px $color-shadow-star, 0px 0px 7.31327px $color-shadow-star,
+      0px 0px 3.65663px $color-shadow-star;
+    background: url("../public/Star 7.png") center no-repeat;
+
+    &:hover {
+      @include scale(1.15);
+    }
+  }
+
+  h2 {
+    position: relative;
+    width: 500px;
+    margin: 0 auto 56px;
+  }
+
+  .container-mentors {
+    display: flex;
+    gap: 20px;
+
+    .wrapper-mentors {
+      display: flex;
+      flex-direction: column;
+
+      h3 {
+        margin-bottom: 119px;
+      }
+
+      .mentors {
+        position: relative;
+        display: flex;
+        gap: 23px;
+
+        .wrapper-card {
+          text-align: left;
+
+          .card {
+            .image-block {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 184px;
+              height: 184px;
+              margin-bottom: 16px;
+              @extend %tpl-circle;
+              background: linear-gradient(
+                152.14deg,
+                rgba(21, 191, 253, 0.7) 9.96%,
+                rgba(156, 55, 253, 0.7) 100%
+              );
+
+              img {
+                display: block;
+                width: 98%;
+                height: 98%;
+                @extend %tpl-circle;
+              }
+            }
+            .title {
+              margin-bottom: 4px;
+            }
+            .description {
+              width: 185px;
+              @extend %tpl-paragraph-2;
+            }
+          }
+
+          &:nth-child(odd) {
+            margin-top: 42px;
+          }
+          &:first-child {
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              top: -155px;
+              left: 106px;
+              width: 198px;
+              height: 156px;
+              background: url("../public/stroke left.png");
+            }
+          }
+          &:nth-child(2) {
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              top: -104px;
+              left: 50%;
+              width: 2px;
+              height: 104px;
+              background: url("../public/stroke forward.png");
+            }
+          }
+          &:last-child {
+            position: relative;
+            &::before {
+              content: "";
+              position: absolute;
+              top: -155px;
+              right: 104px;
+              width: 198px;
+              height: 156px;
+              background: url("../public/stroke right.png");
+            }
+          }
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 30px;
+          height: 30px;
+          top: 78px;
+          left: -18px;
+          background: url("../public/Star 5.png") center no-repeat;
+        }
+      }
+    }
+
+    .about-engineers {
+      max-width: 486px;
+      margin-top: 40px;
+
+      .p1 {
+        text-align: left;
+        @extend %tpl-paragraph-1;
+      }
+
+      .star-8 {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 30px;
+        bottom: 0px;
+        right: 200px;
+        background: url("../public/Star 8.png") center no-repeat;
+
+        &:hover {
+          @include scale(2);
+        }
+      }
+    }
+  }
+}

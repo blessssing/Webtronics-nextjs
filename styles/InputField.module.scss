@@ -1,0 +1,63 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.wrapper-input {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 68px;
+  background: linear-gradient(165deg, $gradient-1, $gradient-2);
+  @include borderRadius(8px);
+
+  input {
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    padding: 24px;
+    background: linear-gradient(to right, #242842, #242843);
+    color: $color-input-text;
+    font-size: 16px;
+    line-height: 22px;
+    outline: 0;
+    border: 0;
+    @include borderRadius(8px);
+    @extend %tpl-transition;
+
+    &::placeholder {
+      color: $color-placeholder;
+    }
+    &::grammar-error {
+      color: $color-white;
+      border: 1px solid $color-error;
+    }
+    &:disabled {
+      color: $color-disabled;
+      border: 1px solid $color-disabled;
+      cursor: not-allowed;
+    }
+    &:active {
+      color: $color-white;
+    }
+    &:focus {
+      color: $color-white;
+    }
+    &:hover {
+      color: $color-input-text;
+    }
+  }
+}
+
+.tooltip-error-message {
+  position: absolute;
+  content: "";
+  top: 0px;
+  right: -150px;
+  width: 300px;
+  height: 100%;
+  padding: 2px;
+  overflow: hidden;
+  border: 1px solid $color-error;
+  background-color: rgba(50, 55, 61, 0.5);
+  text-align: left;
+  @include borderRadius(8px);
+}

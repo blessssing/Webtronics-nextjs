@@ -1,0 +1,218 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.section-steps {
+  position: relative;
+  margin-top: 184px;
+
+  .star-15 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 0px;
+    left: 200px;
+    background: url("../public/Star 15.png") center no-repeat;
+
+    &:hover {
+      @include scale(1.25);
+    }
+  }
+
+  .star-14 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 35%;
+    left: 12px;
+    background: url("../public/Star 14.png") center no-repeat;
+
+    &:hover {
+      @include scale(1.25);
+    }
+  }
+
+  .star-13 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 48%;
+    right: 32%;
+    background: url("../public/Star 13.png") center no-repeat;
+    z-index: 3000;
+
+    &:hover {
+      @include scale(1.25);
+    }
+  }
+
+  .star-12 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 40%;
+    right: -5%;
+    background: url("../public/Star 12.png") center no-repeat;
+
+    &:hover {
+      @include scale(1.25);
+    }
+  }
+
+  .star-16 {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 30px;
+    top: 69%;
+    right: 5%;
+    background: url("../public/Star 16.png") center no-repeat;
+    z-index: 3000;
+
+    &:hover {
+      @include scale(1.25);
+    }
+  }
+
+  h2 {
+    margin: 0 auto 56px;
+    width: 500px;
+  }
+
+  .steps-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: left;
+
+    .circle-odd {
+      position: relative;
+      height: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 53px;
+        right: -108px;
+        width: 24px;
+        height: 24px;
+        background-color: $color-primary-80;
+        @extend %tpl-circle;
+        z-index: 3000;
+      }
+    }
+
+    .circle-even {
+      position: relative;
+      height: 0;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 53px;
+        left: -112px;
+        width: 24px;
+        height: 24px;
+        background-color: $color-primary-80;
+        @extend %tpl-circle;
+        z-index: 3000;
+      }
+    }
+
+    .card-step {
+      max-height: 188px;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid; //todo
+      @extend %tpl-border-radius;
+      border-image: linear-gradient(150deg, $gradient-1, $gradient-2) 30;
+
+      .sub-title {
+      }
+      .title {
+        width: 427px;
+        margin: 16px 0;
+      }
+      .description {
+        width: 408px;
+      }
+
+      &:nth-child(even) {
+        position: relative;
+        margin-top: 115px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          top: -22px;
+          left: -20px;
+          display: block;
+          width: 146px;
+          height: 228px;
+          background: url("../public/border-left-stroke.png") no-repeat;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          top: 86px;
+          left: -68px;
+          width: 40px;
+          height: 6px;
+          background: url("../public/steps-arrow-right.png") no-repeat;
+          z-index: 2000;
+        }
+      }
+      &:nth-child(odd) {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          top: -22px;
+          right: -20px;
+          width: 146px;
+          height: 228px;
+          background: url("../public/border-right-stroke.png") no-repeat;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          top: 86px;
+          right: -68px;
+          width: 40px;
+          height: 6px;
+          background: url("../public/steps-arrow-left.png") no-repeat;
+          z-index: 2000;
+        }
+      }
+    }
+
+    &::before {
+      @extend %tpl-sprite;
+      top: 23%;
+      left: -114px;
+    }
+  }
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    bottom: 88px;
+    right: 50%;
+    width: 4px;
+    height: 735px;
+    background: linear-gradient(to right, #2effcd, #1ff2ff);
+    z-index: 1000;
+  }
+}

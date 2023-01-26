@@ -1,0 +1,80 @@
+@import "variables.scss";
+@import "mixins/mixins.scss";
+
+.section-contact {
+  position: relative;
+  margin-top: 250px;
+  border: 1px solid $border-1;
+  @include borderRadius(20px);
+  background: linear-gradient(to right, #1c213f, #1a203e);
+
+  .title {
+    margin: 56px 0 16px;
+  }
+
+  .p1 {
+    margin-bottom: 24px;
+    @extend %tpl-paragraph-1;
+  }
+
+  .form-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    width: 493px;
+    margin: 0 auto 56px;
+
+    .btn-submit-wrapper {
+      margin-top: 8px;
+
+      .btn-submit {
+        width: 100%;
+      }
+    }
+
+    .show-send-success {
+      position: absolute;
+      content: "";
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      top: 36%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      -o-transform: translate(-50%, -50%);
+      width: 496px;
+      height: 236px;
+      padding: 10px 18px;
+      color: #000;
+      background-color: rgba(247, 247, 247, 0.8);
+      border: 3px solid #acfb87;
+      @include borderRadius(8px);
+      z-index: 5000;
+
+      .close-modal {
+        display: block;
+        width: 180px;
+        padding: 15px 24px;
+        color: #000;
+        background-color: $color-white;
+        border: 2px solid #acfb87;
+        font-weight: 600;
+        text-align: center;
+        cursor: pointer;
+        @include borderRadius(8px);
+      }
+    }
+  }
+
+  &::after {
+    @extend %tpl-sprite;
+    top: -42%;
+    right: -190px;
+  }
+}

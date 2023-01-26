@@ -1,0 +1,30 @@
+@import "../variables.scss";
+
+@mixin fontHelvetica() {
+  font-family: "Helvetica", sans-serif;
+}
+
+@mixin borderRadius($number) {
+  border-radius: $number;
+  -webkit-border-radius: $number;
+  -moz-border-radius: $number;
+  -ms-border-radius: $number;
+  -o-border-radius: $number;
+}
+
+@mixin transition($time) {
+  transition: $time;
+  -webkit-transition: $time;
+  -moz-transition: $time;
+  -ms-transition: $time;
+  -o-transition: $time;
+}
+
+@mixin scale($scale-number) {
+  @extend %tpl-transition;
+  transform: scale($scale-number);
+  -webkit-transform: scale($scale-number);
+  -moz-transform: scale($scale-number);
+  -ms-transform: scale($scale-number);
+  -o-transform: scale($scale-number);
+}
