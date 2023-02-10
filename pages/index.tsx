@@ -48,7 +48,7 @@ export const getServerSideProps: GetServerSideProps =
   wrapper.getServerSideProps((store) => async () => {
     const dispatch = store.dispatch as NextThunkDispatch;
     const response = await axios.get<FeedbackState>(
-      "http://localhost:3004/feedback"
+      `${process.env.NEXTAUTH_URL_FEEDBACK}`
     );
     const data = response.data;
     await dispatch(getInitialFeedback(data));

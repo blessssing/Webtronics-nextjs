@@ -19,7 +19,7 @@ export const feedbackAddContact = createAsyncThunk(
   async (contact: IFormInputs, { rejectWithValue }) => {
     try {
       const response = await axios.post<IFormInputs>(
-        "http://localhost:3004/feedback",
+        `${process.env.NEXTAUTH_URL_FEEDBACK}`,
         contact
       );
       return response.data;
