@@ -17,43 +17,43 @@ import { NextThunkDispatch, RootState, wrapper } from "../redux/store";
 import { useTypedSelector } from "../redux/hooks/useTypedSelector";
 
 const Home: NextPage = () => {
-  const data = useTypedSelector((state) => state.feedback);
-  console.log("data ", data);
+	const data = useTypedSelector((state) => state.feedback);
+	console.log("data ", data);
 
-  return (
-    <div>
-      <MainLayout
-        title={"Webtronics React Developer"}
-        keywords={
-          "react typescript next.js @redux-toolkit react-hook-form yup scss"
-        }
-      >
-        <Navigation />
-        <Developer />
-        <About />
-        <Programming />
-        <Steps />
-        <Questions />
-        <Review />
-        <Gallery />
-        <Contact />
-      </MainLayout>
-      <Footer />
-    </div>
-  );
+	return (
+		<div>
+			<MainLayout
+				title={"Webtronics React Developer"}
+				keywords={
+					"react typescript next.js @redux-toolkit react-hook-form yup scss"
+				}
+			>
+				<Navigation />
+				<Developer />
+				<About />
+				<Programming />
+				<Steps />
+				<Questions />
+				<Review />
+				<Gallery />
+				<Contact />
+			</MainLayout>
+			<Footer />
+		</div>
+	);
 };
 
 export default Home;
 export const getServerSideProps: GetServerSideProps =
-  wrapper.getServerSideProps((store) => async () => {
-    const dispatch = store.dispatch as NextThunkDispatch;
-    const response = await axios.get<FeedbackState>(
-      `${process.env.NEXTAUTH_URL_FEEDBACK}`
-    );
-    const data = response.data;
-    await dispatch(getInitialFeedback(data));
+	wrapper.getServerSideProps((store) => async () => {
+		const dispatch = store.dispatch as NextThunkDispatch;
+		const response = await axios.get<FeedbackState>(
+			`http://localhost:3004/feedback`
+		);
+		const data = response.data;
+		await dispatch(getInitialFeedback(data));
 
-    return {
-      props: {},
-    };
-  });
+		return {
+			props: {},
+		};
+	});
